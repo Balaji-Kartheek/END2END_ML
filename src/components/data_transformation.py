@@ -24,7 +24,7 @@ class DataTransformation:
 
     def get_data_transformer_object(self):
         '''
-        This function si responsible for data trnasformation
+        This function is responsible for data trnasformation
         
         '''
         try:
@@ -114,11 +114,16 @@ class DataTransformation:
                 obj=preprocessing_obj
 
             )
-
+            
+            print("Process done")
             return (
                 train_arr,
                 test_arr,
                 self.data_transformation_config.preprocessor_obj_file_path,
             )
+            
+            
         except Exception as e:
+            print(e)
             raise CustomException(e,sys)
+            
